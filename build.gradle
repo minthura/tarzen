@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    dependencies {
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.40.5'
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.2.0' apply false
+    id 'com.android.library' version '7.2.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.6.21' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    // Sdk and tools
+    minSdkVersion = 21
+    targetSdkVersion = 32
+    compileSdkVersion = 32
+
+    androidXCoreVersion = '1.7.0'
+    androidXAppCompatVersion = '1.4.1'
+    androidXFragmentKtxVersion = '1.4.1'
+    androidXLifecycleVersion = '2.4.1'
+    materialVersion = '1.6.0'
+    constraintLayoutVersion = '2.1.3'
+    hiltVersion = '2.40.5'
+    retrofitVersion = '2.9.0'
+    loggingInterceptorVersion = '4.9.3'
+    timberVersion = '5.0.1'
+    jUnitVersion = '4.13.2'
+    androidXjUnitVersion = '1.1.3'
+    espressoCoreVersion = '3.4.0'
+    archCoreTestingVersion = '2.1.0'
+    coroutinesTestVersion = '1.6.0'
+    mockkVersion = '1.12.4'
+}
