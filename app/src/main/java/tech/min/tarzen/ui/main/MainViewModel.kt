@@ -32,9 +32,8 @@ class MainViewModel @Inject constructor(
                 isLoading.value = it is Result.Loading
                 when(it){
                     is Result.Error -> showToast.emit(it.message)
-                    is Result.Success -> {
-                        users.value = it.data
-                    }
+                    is Result.Success -> users.value = it.data
+                    is Result.Loading -> {}
                 }
             }.collect()
     }

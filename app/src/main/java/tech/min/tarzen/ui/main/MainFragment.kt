@@ -31,9 +31,6 @@ class MainFragment : Fragment() {
             false
         ).apply {
             viewModel = this@MainFragment.viewModel.apply {
-                users.onEach {
-                    recyclerView.adapter = UserRecyclerViewAdapter(it)
-                }.launchIn(viewLifecycleOwner.lifecycleScope)
                 showToast.onEach {
                     toast(it)
                 }.launchIn(viewLifecycleOwner.lifecycleScope)
