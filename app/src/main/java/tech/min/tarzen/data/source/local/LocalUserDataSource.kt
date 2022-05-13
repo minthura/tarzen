@@ -6,6 +6,6 @@ import javax.inject.Inject
 
 class LocalUserDataSource @Inject constructor(): UserDataSource {
     override suspend fun getUsers(): List<User> {
-        return listOf(User("Tony", "tony@stark.com"))
+        return listOf(User("Tony", "tony@stark.com", "null"))
     }
 }

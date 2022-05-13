@@ -23,16 +23,16 @@ class MainViewModel @Inject constructor(
 
     val showToast = MutableSharedFlow<String?>()
     val users = MutableStateFlow<List<User>>(emptyList())
+    val isLoading = MutableStateFlow(false)
 
     fun onGetUsers() = viewModelScope.launch(dispatcher) {
         userRepository.getUsers()
             .onEach {
                 Timber.d("$it")
+                isLoading.value = it is Result.Loading
                 when(it){
-                    is Result.Loading -> showToast.emit("LOADING")
                     is Result.Error -> showToast.emit(it.message)
                     is Result.Success -> {
-                        showToast.emit(it.data.firstOrNull()?.name)
                         users.value = it.data
                     }
                 }
