@@ -1,16 +1,14 @@
 package tech.min.tarzen
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
+import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.*
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import tech.min.tarzen.databinding.ActivityMainBinding
-import tech.min.tarzen.ui.main.MainFragment
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
